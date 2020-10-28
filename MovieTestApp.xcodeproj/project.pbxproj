@@ -51,6 +51,7 @@
 		C98AA8AE254A330300A52C82 /* MovieTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98AA8B2254A330300A52C82 /* MovieTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTestAppUITests.swift; sourceTree = "<group>"; };
 		C98AA8B4254A330300A52C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C98AA8C4254A366100A52C82 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		C98AA88C254A32FE00A52C82 /* MovieTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				C98AA8C3254A364900A52C82 /* Configuration */,
 				C98AA88D254A32FE00A52C82 /* AppDelegate.swift */,
 				C98AA88F254A32FE00A52C82 /* SceneDelegate.swift */,
 				C98AA891254A32FE00A52C82 /* ViewController.swift */,
@@ -129,6 +131,14 @@
 				C98AA8B4254A330300A52C82 /* Info.plist */,
 			);
 			path = MovieTestAppUITests;
+			sourceTree = "<group>";
+		};
+		C98AA8C3254A364900A52C82 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				C98AA8C4254A366100A52C82 /* Config.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
