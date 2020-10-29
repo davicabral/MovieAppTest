@@ -45,6 +45,7 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGroupedBackground
+        
         let safeArea = self.view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             
@@ -68,6 +69,11 @@ class MoviesViewController: UIViewController {
         
         viewModel?.loadMovies()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.delegate = self
+    }
 }
 
 extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSourcePrefetching {
@@ -86,6 +92,7 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
             let movie = viewModel.movie(from: indexPath)
             let posterUrl = movie.posterImage(withSize: .w185)
             cell.posterImageView.imageFromURL(posterUrl)
+            cell.titleLabel.text = movie.title
         }
         
         return cell
@@ -111,5 +118,12 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
             viewModel.loadMoreMovies()
         }
     }
-    
+}
+
+extension MoviesViewController : UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if tabBarController.selectedIndex == self.tabBarItem.tag {
+            collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
+    }
 }
