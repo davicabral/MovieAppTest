@@ -17,7 +17,11 @@ class MoviesViewModel: MoviesViewModelProtocol {
     
     private var currentPage = 1
     private(set) var numberOfMovies: Int?
-    private(set) var isLoading: Bool = false
+    private(set) var isLoading: Bool = false {
+        didSet {
+            didChangeLoadingState?(isLoading)
+        }
+    }
     private(set) var type: TMDBSearchType
     private var movies: [TMDBMovie] = [] {
         didSet {
@@ -27,6 +31,7 @@ class MoviesViewModel: MoviesViewModelProtocol {
     
     // Binding Closures
     var didMoviesUpdated: (([TMDBMovie]) -> Void)?
+    var didChangeLoadingState: ((Bool) -> Void)?
     
     private let service: MovieServiceProtocol
     

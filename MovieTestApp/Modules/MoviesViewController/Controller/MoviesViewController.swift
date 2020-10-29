@@ -14,7 +14,6 @@ class MoviesViewController: UIViewController {
     private lazy var loadingView: LoadingView = {
         let loading = LoadingView()
         view.addSubview(loading)
-        loading.animate(forState: true)
         return loading
     }()
     
@@ -61,6 +60,10 @@ class MoviesViewController: UIViewController {
         
         viewModel?.didMoviesUpdated = { [weak self] movies in
             self?.collectionView.reloadData()
+        }
+        
+        viewModel?.didChangeLoadingState = { [weak self] isLoading in
+            self?.loadingView.animate(forState: isLoading)
         }
         
         viewModel?.loadMovies()
