@@ -10,6 +10,8 @@ import TMDBKit
 
 class MoviesViewModel: MoviesViewModelProtocol {
     
+    
+    
     var title: String { type.rawValue }
     
     var barIcon: UIImage? { type.barIconImage }
@@ -25,13 +27,26 @@ class MoviesViewModel: MoviesViewModelProtocol {
     private(set) var type: TMDBSearchType
     private var movies: [TMDBMovie] = [] {
         didSet {
-            didMoviesUpdated?(movies)
+            if !movies.isEmpty, !oldValue.isEmpty {
+                let actualNumberOfMovies = oldValue.count
+                let futureNumberOfMovies = movies.count
+                let newMovies = futureNumberOfMovies - actualNumberOfMovies
+                if newMovies >= 0 {
+                    let startIndex = actualNumberOfMovies
+                    let endIndex = startIndex + newMovies
+                    let reloadableIndexPaths = (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
+                    didUpdateMovies?(reloadableIndexPaths)
+                }
+            } else {            
+                didLoadMovies?()
+            }
         }
     }
     
     // Binding Closures
-    var didMoviesUpdated: (([TMDBMovie]) -> Void)?
     var didChangeLoadingState: ((Bool) -> Void)?
+    var didLoadMovies: (() -> Void)?
+    var didUpdateMovies: (([IndexPath]) -> Void)?
     
     private let service: MovieServiceProtocol
     

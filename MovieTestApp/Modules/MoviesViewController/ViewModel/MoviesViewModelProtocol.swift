@@ -17,7 +17,8 @@ protocol MoviesViewModelProtocol: class {
     var numberOfMovies: Int? { get }
     var isLoading: Bool { get }
     
-    var didMoviesUpdated: (([TMDBMovie]) -> Void)? { get set }
+    var didLoadMovies: (() -> Void)? { get set }
+    var didUpdateMovies: (([IndexPath]) -> Void)? { get set }
     var didChangeLoadingState: ((Bool) -> Void)? { get set }
     
     func movie(from indexPath: IndexPath) -> TMDBMovie

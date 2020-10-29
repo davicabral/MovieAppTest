@@ -17,7 +17,7 @@ class MoviesViewController: UIViewController {
         return loading
     }()
     
-    private lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: MoviesCollectionView = {
         let collection = MoviesCollectionView()
         collection.register(MoviesCollectionViewCell.self)
         collection.delegate = self
@@ -52,8 +52,12 @@ class MoviesViewController: UIViewController {
             loadingView.widthAnchor.constraint(equalToConstant: 80)
         ])
         
-        viewModel?.didMoviesUpdated = { [weak self] movies in
+        viewModel?.didLoadMovies = { [weak self] in
             self?.collectionView.reloadData()
+        }
+        
+        viewModel?.didUpdateMovies = { [weak self] indexPaths in
+            self?.collectionView.reloadItems(at: indexPaths)
         }
         
         viewModel?.didChangeLoadingState = { [weak self] isLoading in
