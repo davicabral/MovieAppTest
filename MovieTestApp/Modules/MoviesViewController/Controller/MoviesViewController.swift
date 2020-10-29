@@ -25,8 +25,7 @@ class MoviesViewController: UIViewController {
         flowLayout.minimumInteritemSpacing = 0
         let collection = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collection.translatesAutoresizingMaskIntoConstraints = false
-        let nib = UINib(nibName: "MoviesCollectionViewCell", bundle: nil)
-        collection.register(nib, forCellWithReuseIdentifier: "movie")
+        collection.register(MoviesCollectionViewCell.self)
         collection.delegate = self
         collection.dataSource = self
         collection.prefetchDataSource = self
@@ -83,10 +82,8 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: Refactor dequeue process
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movie", for: indexPath) as? MoviesCollectionViewCell, let viewModel = viewModel else {
-            fatalError()
-        }
+        guard let viewModel = viewModel else { fatalError() }
+        let cell: MoviesCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         
         if viewModel.isMovieLoading(at: indexPath) {
             cell.posterImageView.image = UIImage(named: "Placeholder")

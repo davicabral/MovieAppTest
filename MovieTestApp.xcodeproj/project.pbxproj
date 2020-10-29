@@ -49,6 +49,8 @@
 		C98AAA7C254AF53D00A52C82 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA7A254AF53D00A52C82 /* MoviesCollectionViewCell.swift */; };
 		C98AAA7D254AF53D00A52C82 /* MoviesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98AAA7B254AF53D00A52C82 /* MoviesCollectionViewCell.xib */; };
 		C98AAA93254B03C100A52C82 /* UIImageView+Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA92254B03C100A52C82 /* UIImageView+Nuke.swift */; };
+		C98AAA99254B10AB00A52C82 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA98254B10AB00A52C82 /* UIView+Helpers.swift */; };
+		C98AAA9F254B10E300A52C82 /* UICollectionView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA9E254B10E300A52C82 /* UICollectionView+Dequeue.swift */; };
 		DF7F2072A75B3ADAD7E71CE3 /* Pods_TMDBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D4626794CEAAB8B6F5962D /* Pods_TMDBKit.framework */; };
 		F363E6F9D720D49767F7EF5F /* Pods_MovieTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEA69EE88FF19AA2C1243E3 /* Pods_MovieTestAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -167,6 +169,8 @@
 		C98AAA7A254AF53D00A52C82 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C98AAA7B254AF53D00A52C82 /* MoviesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C98AAA92254B03C100A52C82 /* UIImageView+Nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nuke.swift"; sourceTree = "<group>"; };
+		C98AAA98254B10AB00A52C82 /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
+		C98AAA9E254B10E300A52C82 /* UICollectionView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Dequeue.swift"; sourceTree = "<group>"; };
 		F67F5D64C861A5A2275FE8CD /* Pods-TMDBKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDBKit.release.xcconfig"; path = "Target Support Files/Pods-TMDBKit/Pods-TMDBKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -446,6 +450,8 @@
 			children = (
 				C98AAA3A254AE4A100A52C82 /* TMDBSearchType+BarItem.swift */,
 				C98AAA92254B03C100A52C82 /* UIImageView+Nuke.swift */,
+				C98AAA98254B10AB00A52C82 /* UIView+Helpers.swift */,
+				C98AAA9E254B10E300A52C82 /* UICollectionView+Dequeue.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -851,11 +857,13 @@
 				C98AAA2A254ADDAD00A52C82 /* MoviesTabBarViewModelProtocol.swift in Sources */,
 				C98AAA23254ADCE900A52C82 /* Colors.swift in Sources */,
 				C98AAA50254AE79900A52C82 /* MoviesViewModel.swift in Sources */,
+				C98AAA99254B10AB00A52C82 /* UIView+Helpers.swift in Sources */,
 				C98AAA7C254AF53D00A52C82 /* MoviesCollectionViewCell.swift in Sources */,
 				C98AAA57254AE8EF00A52C82 /* MoviesViewController.swift in Sources */,
 				C98AAA93254B03C100A52C82 /* UIImageView+Nuke.swift in Sources */,
 				C98AA88E254A32FE00A52C82 /* AppDelegate.swift in Sources */,
 				C98AA898254A32FE00A52C82 /* MovieTestApp.xcdatamodeld in Sources */,
+				C98AAA9F254B10E300A52C82 /* UICollectionView+Dequeue.swift in Sources */,
 				C98AAA4A254AE69000A52C82 /* MoviesViewModelProtocol.swift in Sources */,
 				C98AA890254A32FE00A52C82 /* SceneDelegate.swift in Sources */,
 			);
