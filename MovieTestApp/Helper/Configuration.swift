@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Configuration {
+fileprivate enum Configuration {
     enum Error: Swift.Error {
         case missingKey
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import TMDBKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        do {
+            let apiKey = try API.apiKey()
+            TMDBConfiguration.register(withKey: apiKey)
+        } catch {
+            print(error)
+        }
+        
         return true
     }
 

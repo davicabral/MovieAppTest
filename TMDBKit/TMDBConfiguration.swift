@@ -14,7 +14,7 @@ public struct TMDBConfiguration {
     
     private init(){}
     
-    public static func setup(withKey key: String, andLanguage language: String = "en-US") {
+    public static func register(withKey key: String, andLanguage language: String = "en-US") {
         TMDBConfiguration.apiKey = key
         TMDBConfiguration.language = language
     }
