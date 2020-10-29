@@ -11,8 +11,8 @@ public enum TMDBRoutes {
     
     case moviesGenre
     case movie(id: Int, parameters: [TMDBQueryParameter])
-    case nowPlaying
-    case upcoming
+    case nowPlaying(TMDBQueryParameter)
+    case upcoming(TMDBQueryParameter)
     
     private var baseURL: String {
         return "https://api.themoviedb.org"
@@ -37,7 +37,9 @@ public enum TMDBRoutes {
     var url: URL {
         switch self {
         case .movie(_, let parameters):
-            return url(path: self.path, parameters: parameters)
+            return url(path: path, parameters: parameters)
+        case .nowPlaying(let parameter), .upcoming(let parameter):
+            return url(path: path, parameters: [parameter])
         default:
             return url(path: self.path)
         }

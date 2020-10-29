@@ -11,6 +11,7 @@ public enum TMDBQueryParameter {
     case appendToResponse([TMDBAppendToResponse])
     case apiKey(String)
     case language(String)
+    case page(Int)
     
     var key: String {
         switch self {
@@ -35,6 +36,8 @@ public enum TMDBQueryParameter {
             return language
         case .apiKey(let apiKey):
             return apiKey
+        case .page(let page):
+            return String(page)
         }
     }
 }
