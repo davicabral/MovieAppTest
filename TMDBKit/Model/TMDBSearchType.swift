@@ -13,12 +13,12 @@ public enum TMDBSearchType: String, CaseIterable {
     case nowPlaying
     case upcoming
 
-    func endpoint(parameter: TMDBQueryParameter) -> TMDBRoutes {
+    func route(parameter: TMDBQueryParameter) -> TMDBRoutes {
         switch self {
         case .nowPlaying:
-            return TMDBRoutes.nowPlaying(parameter)
+            return .nowPlaying(parameter)
         case .upcoming:
-            return TMDBRoutes.upcoming(parameter)
+            return .upcoming(parameter)
         }
     }
 }

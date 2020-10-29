@@ -37,6 +37,10 @@
 		C98AA9A5254A5FC000A52C82 /* TMDBCrew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA99C254A5FC000A52C82 /* TMDBCrew.swift */; };
 		C98AA9A6254A5FC000A52C82 /* TMDBSearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA99D254A5FC000A52C82 /* TMDBSearchType.swift */; };
 		C98AA9A7254A5FC000A52C82 /* TMDBCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA99E254A5FC000A52C82 /* TMDBCountry.swift */; };
+		C98AA9B5254A615A00A52C82 /* TMDBMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA9B4254A615A00A52C82 /* TMDBMovieService.swift */; };
+		C98AA9BB254A621500A52C82 /* TMDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA9BA254A621500A52C82 /* TMDBService.swift */; };
+		C98AA9C1254A628B00A52C82 /* TMDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA9C0254A628B00A52C82 /* TMDBResponse.swift */; };
+		C98AA9C7254A62C600A52C82 /* TMDBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA9C6254A62C600A52C82 /* TMDBError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +134,10 @@
 		C98AA99C254A5FC000A52C82 /* TMDBCrew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBCrew.swift; sourceTree = "<group>"; };
 		C98AA99D254A5FC000A52C82 /* TMDBSearchType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBSearchType.swift; sourceTree = "<group>"; };
 		C98AA99E254A5FC000A52C82 /* TMDBCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBCountry.swift; sourceTree = "<group>"; };
+		C98AA9B4254A615A00A52C82 /* TMDBMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMovieService.swift; sourceTree = "<group>"; };
+		C98AA9BA254A621500A52C82 /* TMDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBService.swift; sourceTree = "<group>"; };
+		C98AA9C0254A628B00A52C82 /* TMDBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBResponse.swift; sourceTree = "<group>"; };
+		C98AA9C6254A62C600A52C82 /* TMDBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +264,7 @@
 				C98AA924254A42DA00A52C82 /* TMDBKit.h */,
 				C98AA925254A42DA00A52C82 /* Info.plist */,
 				C98AA944254A430800A52C82 /* TMDBConfiguration.swift */,
+				C98AA9C6254A62C600A52C82 /* TMDBError.swift */,
 			);
 			path = TMDBKit;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 			children = (
 				C98AA977254A4A7000A52C82 /* TMDBMoviesGenreResponse.swift */,
 				C98AA976254A4A6F00A52C82 /* TMDBMoviesResponse.swift */,
+				C98AA9C0254A628B00A52C82 /* TMDBResponse.swift */,
 			);
 			path = NetworkResponse;
 			sourceTree = "<group>";
@@ -294,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				C98AA98F254A5CC600A52C82 /* MovieServiceProtocol.swift */,
+				C98AA9B4254A615A00A52C82 /* TMDBMovieService.swift */,
+				C98AA9BA254A621500A52C82 /* TMDBService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -546,14 +558,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98AA990254A5CC600A52C82 /* MovieServiceProtocol.swift in Sources */,
+				C98AA9C1254A628B00A52C82 /* TMDBResponse.swift in Sources */,
 				C98AA99F254A5FC000A52C82 /* TMDBMovie.swift in Sources */,
 				C98AA94C254A464200A52C82 /* TMDBRoute.swift in Sources */,
+				C98AA9C7254A62C600A52C82 /* TMDBError.swift in Sources */,
 				C98AA9A4254A5FC000A52C82 /* TMDBCompany.swift in Sources */,
 				C98AA9A2254A5FC000A52C82 /* TMDBMovieGenre.swift in Sources */,
 				C98AA9A6254A5FC000A52C82 /* TMDBSearchType.swift in Sources */,
+				C98AA9BB254A621500A52C82 /* TMDBService.swift in Sources */,
 				C98AA9A5254A5FC000A52C82 /* TMDBCrew.swift in Sources */,
 				C98AA9A7254A5FC000A52C82 /* TMDBCountry.swift in Sources */,
 				C98AA979254A4A7000A52C82 /* TMDBMoviesGenreResponse.swift in Sources */,
+				C98AA9B5254A615A00A52C82 /* TMDBMovieService.swift in Sources */,
 				C98AA96B254A4A5C00A52C82 /* TMDBUrlEncoder.swift in Sources */,
 				C98AA978254A4A7000A52C82 /* TMDBMoviesResponse.swift in Sources */,
 				C98AA9A1254A5FC000A52C82 /* TMDBCredits.swift in Sources */,

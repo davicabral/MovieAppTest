@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import TMDBKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let movieService = TMDBMovieService()
+        movieService.listMovies(searchType: .nowPlaying) { movies, total, error in
+            print(movies ?? [])
+        }
     }
 
 

@@ -10,7 +10,7 @@ import Foundation
 public enum TMDBRoutes {
     
     case moviesGenre
-    case movie(id: Int, parameters: [TMDBQueryParameter])
+    case movie(id: Int, parameters: [TMDBQueryParameter]?)
     case nowPlaying(TMDBQueryParameter)
     case upcoming(TMDBQueryParameter)
     
