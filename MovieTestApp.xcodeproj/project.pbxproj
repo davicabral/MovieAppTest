@@ -16,6 +16,7 @@
 		C98AA89D254A330200A52C82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98AA89B254A330200A52C82 /* LaunchScreen.storyboard */; };
 		C98AA8A8254A330300A52C82 /* MovieTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA8A7254A330300A52C82 /* MovieTestAppTests.swift */; };
 		C98AA8B3254A330300A52C82 /* MovieTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA8B2254A330300A52C82 /* MovieTestAppUITests.swift */; };
+		C98AA8D2254A3CF700A52C82 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA8D1254A3CF700A52C82 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		C98AA8B2254A330300A52C82 /* MovieTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTestAppUITests.swift; sourceTree = "<group>"; };
 		C98AA8B4254A330300A52C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C98AA8C4254A366100A52C82 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		C98AA8D1254A3CF700A52C82 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		C98AA88C254A32FE00A52C82 /* MovieTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				C98AA8D6254A416500A52C82 /* Helper */,
 				C98AA8C3254A364900A52C82 /* Configuration */,
 				C98AA88D254A32FE00A52C82 /* AppDelegate.swift */,
 				C98AA88F254A32FE00A52C82 /* SceneDelegate.swift */,
@@ -139,6 +142,14 @@
 				C98AA8C4254A366100A52C82 /* Config.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		C98AA8D6254A416500A52C82 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C98AA8D1254A3CF700A52C82 /* Configuration.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98AA892254A32FE00A52C82 /* ViewController.swift in Sources */,
+				C98AA8D2254A3CF700A52C82 /* Configuration.swift in Sources */,
 				C98AA88E254A32FE00A52C82 /* AppDelegate.swift in Sources */,
 				C98AA898254A32FE00A52C82 /* MovieTestApp.xcdatamodeld in Sources */,
 				C98AA890254A32FE00A52C82 /* SceneDelegate.swift in Sources */,
@@ -331,6 +343,7 @@
 /* Begin XCBuildConfiguration section */
 		C98AA8B5254A330300A52C82 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C98AA8C4254A366100A52C82 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -392,6 +405,7 @@
 		};
 		C98AA8B6254A330300A52C82 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C98AA8C4254A366100A52C82 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
