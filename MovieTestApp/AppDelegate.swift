@@ -12,16 +12,7 @@ import TMDBKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        do {
-            let apiKey = try API.apiKey()
-            TMDBConfiguration.register(withKey: apiKey)
-        } catch {
-            print(error)
-        }
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool { 
         return true
     }
 
