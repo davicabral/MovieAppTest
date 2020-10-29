@@ -72,14 +72,6 @@ class MoviesViewController: UIViewController {
 
 extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSourcePrefetching {
    
-    // Request Pagination
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        guard let viewModel = viewModel else { return }
-        if indexPaths.contains(where: viewModel.isMovieLoading), !viewModel.isLoading {
-            viewModel.loadMoreMovies()
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel?.numberOfMovies ?? 0
     }
@@ -99,6 +91,11 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = viewModel?.movie(from: indexPath)
+        print(movie?.title)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionSize = collectionView.frame.size
         let cellWithMargins = collectionSize.width - 30
@@ -107,6 +104,12 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
-    
+    // Request Pagination
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        guard let viewModel = viewModel else { return }
+        if indexPaths.contains(where: viewModel.isMovieLoading), !viewModel.isLoading {
+            viewModel.loadMoreMovies()
+        }
+    }
     
 }
