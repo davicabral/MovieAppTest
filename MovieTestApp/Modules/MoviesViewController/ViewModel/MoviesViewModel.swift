@@ -17,7 +17,7 @@ class MoviesViewModel: MoviesViewModelProtocol {
     
     private var currentPage = 1
     private(set) var numberOfMovies: Int?
-    
+    private(set) var isLoading: Bool = false
     private(set) var type: TMDBSearchType
     private var movies: [TMDBMovie] = [] {
         didSet {
@@ -38,7 +38,9 @@ class MoviesViewModel: MoviesViewModelProtocol {
     func movie(from indexPath: IndexPath) -> TMDBMovie { movies[indexPath.row] }
     
     func loadMovies() {
+        isLoading = true
         service.listMovies(searchType: type, page: currentPage) { [weak self] movies, totalNumberMovies, error in
+            self?.isLoading = false
             if let movies = movies, let numberOfMovies = totalNumberMovies {
                 self?.numberOfMovies = numberOfMovies
                 self?.movies = movies
@@ -47,8 +49,10 @@ class MoviesViewModel: MoviesViewModelProtocol {
     }
     
     func loadMoreMovies() {
+        isLoading = true
         currentPage += 1
         service.listMovies(searchType: type, page: currentPage) { [weak self] movies, totalNumberMovies, error in
+            self?.isLoading = false
             if let movies = movies, let numberOfMovies = totalNumberMovies {
                 self?.numberOfMovies = numberOfMovies
                 self?.movies += movies

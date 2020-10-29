@@ -15,6 +15,7 @@ protocol MoviesViewModelProtocol: class {
     var barIconFilled: UIImage? { get }
     var type: TMDBSearchType { get }
     var numberOfMovies: Int? { get }
+    var isLoading: Bool { get }
     
     var didMoviesUpdated: (([TMDBMovie]) -> Void)? { get set }
     

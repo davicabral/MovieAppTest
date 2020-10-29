@@ -70,10 +70,10 @@ class MoviesViewController: UIViewController {
 
 extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSourcePrefetching {
    
-    // Pagination
+    // Request Pagination
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         guard let viewModel = viewModel else { return }
-        if indexPaths.contains(where: viewModel.isMovieLoading) {
+        if indexPaths.contains(where: viewModel.isMovieLoading), !viewModel.isLoading {
             viewModel.loadMoreMovies()
         }
     }
@@ -83,6 +83,7 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // TODO: Refactor dequeue process
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movie", for: indexPath) as? MoviesCollectionViewCell, let viewModel = viewModel else {
             fatalError()
         }
