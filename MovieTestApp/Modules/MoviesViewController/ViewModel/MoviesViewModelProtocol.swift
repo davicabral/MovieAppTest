@@ -8,10 +8,11 @@
 import UIKit
 import TMDBKit
 
-protocol MoviewViewModelProtocol: class {
+protocol MoviesViewModelProtocol: class {
     
     var title: String { get }
     var barIcon: UIImage? { get }
+    var barIconFilled: UIImage? { get }
     var type: TMDBSearchType { get }
     
     

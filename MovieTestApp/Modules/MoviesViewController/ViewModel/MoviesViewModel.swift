@@ -8,11 +8,12 @@
 import UIKit
 import TMDBKit
 
-class MoviesViewModel: MoviewViewModelProtocol {
+class MoviesViewModel: MoviesViewModelProtocol {
     
     var title: String { type.rawValue }
     
     var barIcon: UIImage? { type.barIconImage }
+    var barIconFilled: UIImage? { type.selectedBarIconImage }
     
     private(set) var type: TMDBSearchType
     

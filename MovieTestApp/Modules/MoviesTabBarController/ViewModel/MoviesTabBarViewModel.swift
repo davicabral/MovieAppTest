@@ -14,7 +14,8 @@ struct MoviesTabBarViewModel: MoviesTabBarViewModelProtocol {
     
     var viewControllers: [UIViewController] {
         types.map {
-            let controller = ViewController()
+            let viewModel = MoviesViewModel(type: $0)
+            let controller = MoviesViewController(viewModel: viewModel)
             controller.tabBarItem.tag = TMDBSearchType.allCases.firstIndex(of: $0)!
             let navigation = UINavigationController(rootViewController: controller)
             return navigation
