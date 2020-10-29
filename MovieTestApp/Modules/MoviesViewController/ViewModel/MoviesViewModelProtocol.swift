@@ -14,6 +14,5 @@ protocol MoviesViewModelProtocol: class {
     var barIcon: UIImage? { get }
     var barIconFilled: UIImage? { get }
     var type: TMDBSearchType { get }
-    
-    
+
 }

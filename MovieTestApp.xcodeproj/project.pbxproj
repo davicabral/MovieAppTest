@@ -42,6 +42,9 @@
 		C98AAA4A254AE69000A52C82 /* MoviesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA49254AE69000A52C82 /* MoviesViewModelProtocol.swift */; };
 		C98AAA50254AE79900A52C82 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA4F254AE79900A52C82 /* MoviesViewModel.swift */; };
 		C98AAA57254AE8EF00A52C82 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA56254AE8EF00A52C82 /* MoviesViewController.swift */; };
+		C98AAA66254AED0000A52C82 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA65254AED0000A52C82 /* LoadingView.swift */; };
+		C98AAA7C254AF53D00A52C82 /* MoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA7A254AF53D00A52C82 /* MoviesCollectionViewCell.swift */; };
+		C98AAA7D254AF53D00A52C82 /* MoviesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98AAA7B254AF53D00A52C82 /* MoviesCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +143,9 @@
 		C98AAA49254AE69000A52C82 /* MoviesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModelProtocol.swift; sourceTree = "<group>"; };
 		C98AAA4F254AE79900A52C82 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		C98AAA56254AE8EF00A52C82 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		C98AAA65254AED0000A52C82 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C98AAA7A254AF53D00A52C82 /* MoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C98AAA7B254AF53D00A52C82 /* MoviesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +216,7 @@
 		C98AA88C254A32FE00A52C82 /* MovieTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				C98AAA64254AECE300A52C82 /* View */,
 				C98AAA39254AE47900A52C82 /* Extensions */,
 				C98AAA21254ADCDE00A52C82 /* Utils */,
 				C98AAA17254ADBF000A52C82 /* Modules */,
@@ -335,6 +342,7 @@
 		C98AAA18254ADBF900A52C82 /* MoviesViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C98AAA6F254AEFF600A52C82 /* View */,
 				C98AAA48254AE67B00A52C82 /* ViewModel */,
 				C98AAA55254AE8D900A52C82 /* Controller */,
 			);
@@ -398,6 +406,23 @@
 				C98AAA56254AE8EF00A52C82 /* MoviesViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C98AAA64254AECE300A52C82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C98AAA65254AED0000A52C82 /* LoadingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C98AAA6F254AEFF600A52C82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C98AAA7A254AF53D00A52C82 /* MoviesCollectionViewCell.swift */,
+				C98AAA7B254AF53D00A52C82 /* MoviesCollectionViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,6 +590,7 @@
 			files = (
 				C98AA89D254A330200A52C82 /* LaunchScreen.storyboard in Resources */,
 				C98AA89A254A330200A52C82 /* Assets.xcassets in Resources */,
+				C98AAA7D254AF53D00A52C82 /* MoviesCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,9 +634,11 @@
 				C98AA892254A32FE00A52C82 /* ViewController.swift in Sources */,
 				C98AAA30254ADEA400A52C82 /* MoviesTabBarViewModel.swift in Sources */,
 				C98AA8DB254A41A200A52C82 /* Configuration.swift in Sources */,
+				C98AAA66254AED0000A52C82 /* LoadingView.swift in Sources */,
 				C98AAA2A254ADDAD00A52C82 /* MoviesTabBarViewModelProtocol.swift in Sources */,
 				C98AAA23254ADCE900A52C82 /* Colors.swift in Sources */,
 				C98AAA50254AE79900A52C82 /* MoviesViewModel.swift in Sources */,
+				C98AAA7C254AF53D00A52C82 /* MoviesCollectionViewCell.swift in Sources */,
 				C98AAA57254AE8EF00A52C82 /* MoviesViewController.swift in Sources */,
 				C98AA88E254A32FE00A52C82 /* AppDelegate.swift in Sources */,
 				C98AA898254A32FE00A52C82 /* MovieTestApp.xcdatamodeld in Sources */,

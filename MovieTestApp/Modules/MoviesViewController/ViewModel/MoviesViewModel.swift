@@ -16,9 +16,11 @@ class MoviesViewModel: MoviesViewModelProtocol {
     var barIconFilled: UIImage? { type.selectedBarIconImage }
     
     private(set) var type: TMDBSearchType
+    private let service: MovieServiceProtocol
     
-    init(type: TMDBSearchType) {
+    init(type: TMDBSearchType, service: MovieServiceProtocol = TMDBMovieService()) {
         self.type = type
+        self.service = service
     }
     
     

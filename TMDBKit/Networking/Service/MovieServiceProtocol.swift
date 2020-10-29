@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MovieServiceProtocol {
+public protocol MovieServiceProtocol {
     
     func listMovies(searchType: TMDBSearchType, page: Int, completion: @escaping (_ movieArray:[TMDBMovie]?, _ totalOfMovies: Int?, _ error: Error?) -> ())
 }
