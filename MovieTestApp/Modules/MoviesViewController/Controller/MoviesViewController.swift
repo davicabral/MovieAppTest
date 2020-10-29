@@ -18,18 +18,11 @@ class MoviesViewController: UIViewController {
     }()
     
     private lazy var collectionView: UICollectionView = {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.minimumInteritemSpacing = 0
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        collection.translatesAutoresizingMaskIntoConstraints = false
+        let collection = MoviesCollectionView()
         collection.register(MoviesCollectionViewCell.self)
         collection.delegate = self
         collection.dataSource = self
         collection.prefetchDataSource = self
-        collection.backgroundColor = .clear
-        collection.contentInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         view.addSubview(collection)
         return collection
     }()
