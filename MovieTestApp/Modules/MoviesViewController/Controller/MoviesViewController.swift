@@ -84,12 +84,11 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
         let cell: MoviesCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         
         if viewModel.isMovieLoading(at: indexPath) {
-            cell.posterImageView.image = UIImage(named: "Placeholder")
+            cell.setupPlaceholderCell()
         } else {
             let movie = viewModel.movie(from: indexPath)
-            let posterUrl = movie.posterImage(withSize: .w185)
-            cell.posterImageView.imageFromURL(posterUrl)
-            cell.titleLabel.text = movie.title
+            let viewModel = MovieCollectionCellViewModel(movie)
+            cell.setupCell(viewModel)
         }
         
         return cell

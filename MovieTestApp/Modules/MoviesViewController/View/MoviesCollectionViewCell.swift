@@ -12,9 +12,14 @@ class MoviesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    func setupCell(_ viewModel: MovieCollectionCellViewModel) {
+        posterImageView.imageFromURL(viewModel.posterImageUrl)
+        titleLabel.text = viewModel.title
+    }
+    
+    func setupPlaceholderCell() {
+        titleLabel.text = nil
+        posterImageView.image = #imageLiteral(resourceName: "Placeholder")
     }
 
 }
