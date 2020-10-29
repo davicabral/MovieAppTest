@@ -21,5 +21,7 @@ protocol MoviesViewModelProtocol: class {
     func movie(from indexPath: IndexPath) -> TMDBMovie
     func loadMovies()
     func loadMoreMovies()
+    
+    func isMovieLoading(at indexPath: IndexPath) -> Bool
 
 }

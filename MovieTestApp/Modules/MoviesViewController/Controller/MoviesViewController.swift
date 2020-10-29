@@ -29,6 +29,7 @@ class MoviesViewController: UIViewController {
         collection.register(nib, forCellWithReuseIdentifier: "movie")
         collection.delegate = self
         collection.dataSource = self
+        collection.prefetchDataSource = self
         collection.backgroundColor = .clear
         collection.contentInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         view.addSubview(collection)
@@ -67,18 +68,33 @@ class MoviesViewController: UIViewController {
     }
 }
 
-extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSourcePrefetching {
+   
+    // Pagination
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        guard let viewModel = viewModel else { return }
+        if indexPaths.contains(where: viewModel.isMovieLoading) {
+            viewModel.loadMoreMovies()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel?.numberOfMovies ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movie", for: indexPath) as? MoviesCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movie", for: indexPath) as? MoviesCollectionViewCell, let viewModel = viewModel else {
             fatalError()
         }
-        let movie = viewModel?.movie(from: indexPath)
-        print(movie?.posterImage(withSize: .w185))
-        cell.posterImageView.image = UIImage(named: "Placeholder")
+        
+        if viewModel.isMovieLoading(at: indexPath) {
+            cell.posterImageView.image = UIImage(named: "Placeholder")
+        } else {
+            let movie = viewModel.movie(from: indexPath)
+            let posterUrl = movie.posterImage(withSize: .w185)
+            cell.posterImageView.imageFromURL(posterUrl)
+        }
+        
         return cell
     }
     

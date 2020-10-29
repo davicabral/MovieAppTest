@@ -56,4 +56,8 @@ class MoviesViewModel: MoviesViewModelProtocol {
         }
     }
     
+    func isMovieLoading(at indexPath: IndexPath) -> Bool {
+        return indexPath.row >= self.movies.count
+    }
+    
 }
