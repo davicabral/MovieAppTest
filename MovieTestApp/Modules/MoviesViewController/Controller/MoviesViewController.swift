@@ -30,7 +30,7 @@ class MoviesViewController: UIViewController {
         collection.delegate = self
         collection.dataSource = self
         collection.backgroundColor = .clear
-        collection.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        collection.contentInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         view.addSubview(collection)
         return collection
     }()
@@ -58,17 +58,26 @@ class MoviesViewController: UIViewController {
             loadingView.heightAnchor.constraint(equalToConstant: 80),
             loadingView.widthAnchor.constraint(equalToConstant: 80)
         ])
+        
+        viewModel?.didMoviesUpdated = { [weak self] movies in
+            self?.collectionView.reloadData()
+        }
+        
+        viewModel?.loadMovies()
     }
 }
 
 extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { 10 }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel?.numberOfMovies ?? 0
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movie", for: indexPath) as? MoviesCollectionViewCell else {
             fatalError()
         }
-        
+        let movie = viewModel?.movie(from: indexPath)
+        print(movie?.posterImage(withSize: .w185))
         cell.posterImageView.image = UIImage(named: "Placeholder")
         return cell
     }
@@ -77,7 +86,7 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
         let collectionSize = collectionView.frame.size
         let cellWithMargins = collectionSize.width - 30
         let cellWidth = cellWithMargins/2
-        let cellHeight = cellWithMargins * 0.9 //aspect ratio
+        let cellHeight = cellWithMargins * 0.8 //aspect ratio
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
