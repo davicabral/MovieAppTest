@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemRed
         let movieService = TMDBMovieService()
         movieService.listMovies(searchType: .nowPlaying) { movies, total, error in
             movies?.forEach {

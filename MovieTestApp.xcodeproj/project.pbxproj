@@ -34,6 +34,11 @@
 		C98AA9C1254A628B00A52C82 /* TMDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA9C0254A628B00A52C82 /* TMDBResponse.swift */; };
 		C98AA9C7254A62C600A52C82 /* TMDBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA9C6254A62C600A52C82 /* TMDBError.swift */; };
 		C98AAA07254AD74700A52C82 /* TMDBImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA06254AD74700A52C82 /* TMDBImage.swift */; };
+		C98AAA1C254ADC4000A52C82 /* MoviesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA1B254ADC4000A52C82 /* MoviesTabBarController.swift */; };
+		C98AAA23254ADCE900A52C82 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA22254ADCE900A52C82 /* Colors.swift */; };
+		C98AAA2A254ADDAD00A52C82 /* MoviesTabBarViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA29254ADDAD00A52C82 /* MoviesTabBarViewModelProtocol.swift */; };
+		C98AAA30254ADEA400A52C82 /* MoviesTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA2F254ADEA400A52C82 /* MoviesTabBarViewModel.swift */; };
+		C98AAA3B254AE4A100A52C82 /* TMDBSearchType+BarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAA3A254AE4A100A52C82 /* TMDBSearchType+BarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +129,11 @@
 		C98AA9C0254A628B00A52C82 /* TMDBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBResponse.swift; sourceTree = "<group>"; };
 		C98AA9C6254A62C600A52C82 /* TMDBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBError.swift; sourceTree = "<group>"; };
 		C98AAA06254AD74700A52C82 /* TMDBImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBImage.swift; sourceTree = "<group>"; };
+		C98AAA1B254ADC4000A52C82 /* MoviesTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTabBarController.swift; sourceTree = "<group>"; };
+		C98AAA22254ADCE900A52C82 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C98AAA29254ADDAD00A52C82 /* MoviesTabBarViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTabBarViewModelProtocol.swift; sourceTree = "<group>"; };
+		C98AAA2F254ADEA400A52C82 /* MoviesTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTabBarViewModel.swift; sourceTree = "<group>"; };
+		C98AAA3A254AE4A100A52C82 /* TMDBSearchType+BarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TMDBSearchType+BarItem.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +204,9 @@
 		C98AA88C254A32FE00A52C82 /* MovieTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				C98AAA39254AE47900A52C82 /* Extensions */,
+				C98AAA21254ADCDE00A52C82 /* Utils */,
+				C98AAA17254ADBF000A52C82 /* Modules */,
 				C98AA8D6254A416500A52C82 /* Helper */,
 				C98AA8C3254A364900A52C82 /* Configuration */,
 				C98AA88D254A32FE00A52C82 /* AppDelegate.swift */,
@@ -302,6 +315,64 @@
 				C98AA99D254A5FC000A52C82 /* TMDBSearchType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C98AAA17254ADBF000A52C82 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C98AAA19254ADC1100A52C82 /* MoviesTabBarController */,
+				C98AAA18254ADBF900A52C82 /* MoviesViewController */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		C98AAA18254ADBF900A52C82 /* MoviesViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoviesViewController;
+			sourceTree = "<group>";
+		};
+		C98AAA19254ADC1100A52C82 /* MoviesTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				C98AAA28254ADD8700A52C82 /* ViewModel */,
+				C98AAA1A254ADC2500A52C82 /* Controller */,
+			);
+			path = MoviesTabBarController;
+			sourceTree = "<group>";
+		};
+		C98AAA1A254ADC2500A52C82 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C98AAA1B254ADC4000A52C82 /* MoviesTabBarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C98AAA21254ADCDE00A52C82 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C98AAA22254ADCE900A52C82 /* Colors.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C98AAA28254ADD8700A52C82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C98AAA29254ADDAD00A52C82 /* MoviesTabBarViewModelProtocol.swift */,
+				C98AAA2F254ADEA400A52C82 /* MoviesTabBarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C98AAA39254AE47900A52C82 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C98AAA3A254AE4A100A52C82 /* TMDBSearchType+BarItem.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,8 +578,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98AAA1C254ADC4000A52C82 /* MoviesTabBarController.swift in Sources */,
+				C98AAA3B254AE4A100A52C82 /* TMDBSearchType+BarItem.swift in Sources */,
 				C98AA892254A32FE00A52C82 /* ViewController.swift in Sources */,
+				C98AAA30254ADEA400A52C82 /* MoviesTabBarViewModel.swift in Sources */,
 				C98AA8DB254A41A200A52C82 /* Configuration.swift in Sources */,
+				C98AAA2A254ADDAD00A52C82 /* MoviesTabBarViewModelProtocol.swift in Sources */,
+				C98AAA23254ADCE900A52C82 /* Colors.swift in Sources */,
 				C98AA88E254A32FE00A52C82 /* AppDelegate.swift in Sources */,
 				C98AA898254A32FE00A52C82 /* MovieTestApp.xcdatamodeld in Sources */,
 				C98AA890254A32FE00A52C82 /* SceneDelegate.swift in Sources */,

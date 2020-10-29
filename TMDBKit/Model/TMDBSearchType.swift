@@ -9,7 +9,7 @@ import Foundation
 
 public enum TMDBSearchType: String, CaseIterable {
     
-    case nowPlaying
+    case nowPlaying = "now_playing"
     case upcoming
 
     func route(parameter: TMDBQueryParameter) -> TMDBRoutes {

@@ -21,8 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         do {
             let apiKey = try API.apiKey()
             TMDBConfiguration.register(withKey: apiKey)
-            window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-            let controller = ViewController()
+            window = UIWindow(windowScene: windowScene)
+            let viewModel = MoviesTabBarViewModel(types: TMDBSearchType.allCases)
+            let controller = MoviesTabBarController(viewModel: viewModel)
             window?.rootViewController = controller
             window?.makeKeyAndVisible()
         } catch {
