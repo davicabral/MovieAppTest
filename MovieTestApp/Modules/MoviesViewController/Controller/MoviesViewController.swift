@@ -95,8 +95,11 @@ extension MoviesViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let movie = viewModel?.movie(from: indexPath)
-        print(movie?.title)
+        if let movie = viewModel?.movie(from: indexPath) {
+            let detailsViewModel = MovieDetailsViewModel(movie: movie)
+            let detailsViewController = MovieDetailsViewController(viewModel: detailsViewModel)
+            navigationController?.pushViewController(detailsViewController, animated: true)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
