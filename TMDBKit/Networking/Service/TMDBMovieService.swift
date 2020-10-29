@@ -24,13 +24,4 @@ public struct TMDBMovieService: MovieServiceProtocol {
         }
     }
     
-    public func detail(movieID id: Int, options: [TMDBQueryParameter]?, completion: @escaping (Result<TMDBMovie, Error>) -> Void) {
-        let route = TMDBRoutes.movie(id: id, parameters: options)
-        let service = TMDBService()
-        service.fetchObject(fromURL: route.url, ofType: TMDBMovie.self) { result in
-            completion(result)
-        }
-    }
-    
-    
 }

@@ -9,8 +9,6 @@ import Foundation
 
 public enum TMDBRoutes {
     
-    case moviesGenre
-    case movie(id: Int, parameters: [TMDBQueryParameter]?)
     case nowPlaying(TMDBQueryParameter)
     case upcoming(TMDBQueryParameter)
     
@@ -21,10 +19,6 @@ public enum TMDBRoutes {
     var path: String {
         var result = "/3"
         switch self {
-        case .moviesGenre:
-            result += "/genre/movie/list"
-        case .movie(let id,_):
-            result += "/movie/\(id)"
         case .nowPlaying:
             result += "/movie/now_playing"
         case .upcoming:
@@ -36,14 +30,9 @@ public enum TMDBRoutes {
     
     var url: URL {
         switch self {
-        case .movie(_, let parameters):
-            return url(path: path, parameters: parameters)
         case .nowPlaying(let parameter), .upcoming(let parameter):
             return url(path: path, parameters: [parameter])
-        default:
-            return url(path: self.path)
         }
-        
     }
     
     private func url(path: String, parameters: [TMDBQueryParameter]? = nil) -> URL {

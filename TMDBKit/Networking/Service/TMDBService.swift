@@ -36,24 +36,4 @@ struct TMDBService {
         
         task.resume()
     }
-    
-    func fetchObject<Model: Decodable>(fromURL url: URL, ofType type: Model.Type, completion: @escaping (Result<Model, Error>) -> Void) {
-        
-        let urlSession = URLSession.shared
-        let request = URLRequest(url: url)
-        let task = urlSession.dataTask(with: request) { (responseData, response, error) in
-            
-            guard let data = responseData else { completion(.failure(error!)); return; }
-            let jsonDecoder = JSONDecoder()
-            do {
-                let response = try jsonDecoder.decode(Model.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(response))
-                }
-            } catch {
-                completion(.failure(error))
-            }
-        }
-        task.resume()
-    }
 }

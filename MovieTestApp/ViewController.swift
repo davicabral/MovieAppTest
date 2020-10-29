@@ -14,7 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let movieService = TMDBMovieService()
         movieService.listMovies(searchType: .nowPlaying) { movies, total, error in
-            print(movies ?? [])
+            movies?.forEach {
+                print($0.title)
+                print($0.overview)
+                print($0.posterImage(withSize: .w500))
+            }
         }
     }
 

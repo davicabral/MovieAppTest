@@ -1,9 +1,8 @@
 //
-//  TMDBMoviesResponse.swift
+//  TMDBRoute.swift
 //  TMDBKit
 //
-//  Created by Davi Cabral de Oliveira on 27/09/18.
-//  Copyright © 2018 Davi Cabral de Oliveira. All rights reserved.
+//  Created by Davi Cabral de Oliveira on 28/10/20.
 //
 
 import Foundation
