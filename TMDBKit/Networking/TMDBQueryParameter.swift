@@ -47,4 +47,5 @@ public enum TMDBAppendToResponse: String {
     case alternativeTitles
     case images
     case videos
+    case credits
 }
