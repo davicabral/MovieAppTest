@@ -23,5 +23,5 @@ struct MovieDetailsViewModel: MovieDetailsViewModelProtocol {
     init(movie: TMDBMovie) {
         self.movie = movie
     }
-    
+
 }

@@ -37,6 +37,13 @@
             BlueprintName = "MovieTestApp"
             ReferencedContainer = "container:MovieTestApp.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C98AA921254A42DA00A52C82"
+            BuildableName = "TMDBKit.framework"
+            BlueprintName = "TMDBKit"
+            ReferencedContainer = "container:MovieTestApp.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference

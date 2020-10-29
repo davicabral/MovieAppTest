@@ -16,7 +16,7 @@
 		C98AA8A8254A330300A52C82 /* MovieTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA8A7254A330300A52C82 /* MovieTestAppTests.swift */; };
 		C98AA8DB254A41A200A52C82 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA8DA254A41A200A52C82 /* Configuration.swift */; };
 		C98AA92B254A42DA00A52C82 /* TMDBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98AA922254A42DA00A52C82 /* TMDBKit.framework */; };
-		C98AA932254A42DA00A52C82 /* TMDBKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA931254A42DA00A52C82 /* TMDBKitTests.swift */; };
+		C98AA932254A42DA00A52C82 /* TMDBImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AA931254A42DA00A52C82 /* TMDBImageTests.swift */; };
 		C98AA934254A42DA00A52C82 /* TMDBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C98AA924254A42DA00A52C82 /* TMDBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C98AA937254A42DA00A52C82 /* TMDBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98AA922254A42DA00A52C82 /* TMDBKit.framework */; };
 		C98AA938254A42DA00A52C82 /* TMDBKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C98AA922254A42DA00A52C82 /* TMDBKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -53,6 +53,8 @@
 		C98AAACC254B3ADB00A52C82 /* MovieDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAACB254B3ADB00A52C82 /* MovieDetailsViewModelProtocol.swift */; };
 		C98AAAD3254B3D6E00A52C82 /* ElasticHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAAD2254B3D6E00A52C82 /* ElasticHeaderView.swift */; };
 		C98AAAD9254B41EA00A52C82 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AAAD8254B41EA00A52C82 /* MovieDetailsViewModel.swift */; };
+		C9C77CEC254B5424000E7B60 /* MovieMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C9C77CE4254B53FF000E7B60 /* MovieMock.json */; };
+		C9C77CF4254B546C000E7B60 /* TMDBMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C77CF3254B546C000E7B60 /* TMDBMovieTests.swift */; };
 		DF7F2072A75B3ADAD7E71CE3 /* Pods_TMDBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D4626794CEAAB8B6F5962D /* Pods_TMDBKit.framework */; };
 		F363E6F9D720D49767F7EF5F /* Pods_MovieTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEA69EE88FF19AA2C1243E3 /* Pods_MovieTestAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -132,7 +134,7 @@
 		C98AA924254A42DA00A52C82 /* TMDBKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMDBKit.h; sourceTree = "<group>"; };
 		C98AA925254A42DA00A52C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C98AA92A254A42DA00A52C82 /* TMDBKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C98AA931254A42DA00A52C82 /* TMDBKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBKitTests.swift; sourceTree = "<group>"; };
+		C98AA931254A42DA00A52C82 /* TMDBImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBImageTests.swift; sourceTree = "<group>"; };
 		C98AA933254A42DA00A52C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C98AA944254A430800A52C82 /* TMDBConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBConfiguration.swift; sourceTree = "<group>"; };
 		C98AA94B254A464200A52C82 /* TMDBRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBRoute.swift; sourceTree = "<group>"; };
@@ -167,6 +169,8 @@
 		C98AAACB254B3ADB00A52C82 /* MovieDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
 		C98AAAD2254B3D6E00A52C82 /* ElasticHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElasticHeaderView.swift; sourceTree = "<group>"; };
 		C98AAAD8254B41EA00A52C82 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
+		C9C77CE4254B53FF000E7B60 /* MovieMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieMock.json; sourceTree = "<group>"; };
+		C9C77CF3254B546C000E7B60 /* TMDBMovieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMovieTests.swift; sourceTree = "<group>"; };
 		F67F5D64C861A5A2275FE8CD /* Pods-TMDBKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDBKit.release.xcconfig"; path = "Target Support Files/Pods-TMDBKit/Pods-TMDBKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -321,8 +325,10 @@
 		C98AA930254A42DA00A52C82 /* TMDBKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				C98AA931254A42DA00A52C82 /* TMDBKitTests.swift */,
+				C9C77CE4254B53FF000E7B60 /* MovieMock.json */,
+				C98AA931254A42DA00A52C82 /* TMDBImageTests.swift */,
 				C98AA933254A42DA00A52C82 /* Info.plist */,
+				C9C77CF3254B546C000E7B60 /* TMDBMovieTests.swift */,
 			);
 			path = TMDBKitTests;
 			sourceTree = "<group>";
@@ -672,6 +678,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C77CEC254B5424000E7B60 /* MovieMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,7 +854,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C98AA932254A42DA00A52C82 /* TMDBKitTests.swift in Sources */,
+				C98AA932254A42DA00A52C82 /* TMDBImageTests.swift in Sources */,
+				C9C77CF4254B546C000E7B60 /* TMDBMovieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
